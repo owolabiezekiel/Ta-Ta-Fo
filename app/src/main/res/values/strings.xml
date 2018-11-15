@@ -16,4 +16,6 @@
         <item>News Agency</item>
         <item>NGO</item>
     </string-array>
+    <string name="com_auth0_client_id">uCRHzTcLg4Er1gXA59j_n-x4i25RT8IQ</string>
+    <string name="com_auth0_domain">team-clover.auth0.com</string>
 </resources>
