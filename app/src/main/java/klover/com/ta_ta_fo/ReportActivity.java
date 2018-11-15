@@ -3,11 +3,11 @@ package klover.com.ta_ta_fo;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -27,6 +27,7 @@ public class ReportActivity extends AppCompatActivity {
     static final int REQUEST_TAKE_PHOTO = 1;
     String mCurrentPhotoPath;
     private EditText crimeDesc;
+    public Spinner agency_spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class ReportActivity extends AppCompatActivity {
 
         dispatchTakePictureIntent();
 
-        Spinner agency_spinner = findViewById(R.id.agency);
+        agency_spinner = findViewById(R.id.agency);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> agencies = ArrayAdapter.createFromResource(this,
                 R.array.agencies, android.R.layout.simple_spinner_item);
@@ -117,7 +118,9 @@ public class ReportActivity extends AppCompatActivity {
         Intent intent = new Intent(ReportActivity.this, FinalConfirmation.class);
         intent.putExtra("image", mCurrentPhotoPath);
         intent.putExtra("description", crimeDesc.getText().toString());
-        Toast.makeText(ReportActivity.this, "Working", Toast.LENGTH_SHORT).show();
+        String spinnerItemSelected = agency_spinner.getItemAtPosition(agency_spinner.getSelectedItemPosition()).toString();
+        intent.putExtra("agency", spinnerItemSelected);
+        Toast.makeText(ReportActivity.this, spinnerItemSelected, Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 }
