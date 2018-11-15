@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Ta-Ta-Fo</string>
+    <string name="image_description">The image of the crime/incident taking place</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="anonymous_on">Your details will not be shared with the security agency</string>
+    <string name="anonymous_off">Your details will be shared with the security agency</string>
+    <string name="explanation">What\'s happening here?</string>
+    <string name="explanation_hint">e.g A robbery is taking place</string>
+    <string name="choose_agency">Who should handle this</string>
+    <string name="next">Next</string>
+    <string-array name="agencies">
+        <item>NDLEA</item>
+        <item>SARS</item>
+        <item>RRS</item>
+        <item>FRSC</item>
+        <item>News Agency</item>
+        <item>NGO</item>
+    </string-array>
 </resources>
